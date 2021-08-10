@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: petclinic-prod
 
 bases:
-  - ../../../../02-projects/petclinic/prod
+  - ../../../../../02-projects/petclinic/prod

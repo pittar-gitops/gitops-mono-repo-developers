@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: petclinic-cicd
 
 bases:
-  - ../../../../02-projects/petclinic/cicd
+  - ../../../../../02-projects/petclinic/cicd
