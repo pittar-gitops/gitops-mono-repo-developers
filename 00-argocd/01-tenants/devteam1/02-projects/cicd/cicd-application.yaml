@@ -8,7 +8,7 @@ spec:
   destination:
     namespace: devteam1-cicd
     server: https://kubernetes.default.svc
-  project: tenant-devteam1
+  project: projects-project
   source:
     path: 01-tenants/devteam1/01-projects/cicd
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo-developers.git
