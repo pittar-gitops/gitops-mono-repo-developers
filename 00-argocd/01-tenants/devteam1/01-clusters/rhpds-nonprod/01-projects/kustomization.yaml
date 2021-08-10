@@ -6,3 +6,6 @@ namespace: devteam1-gitops
 bases:
   # List of Projects for this tenant in this cluster.
   - ../../../02-projects/cicd
+
+resources:
+  - projects-project.yaml
