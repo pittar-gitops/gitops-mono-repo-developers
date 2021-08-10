@@ -1,0 +1,19 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+  name: petclinic-prod
+spec:
+  destination:
+    namespace: petclinic-prod
+    server: https://kubernetes.default.svc
+  project: projects-project
+  source:
+    path: 01-tenants/devteam1/01-projects/petclinic/prod
+    repoURL: https://github.com/pittar-gitops/gitops-mono-repo-developers.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
