@@ -6,9 +6,9 @@ namespace: devteam1-gitops
 bases:
   # List of Projects for this tenant in this cluster.
   - ../../../02-projects/cicd
-  - ../../../../02-projects/petclinic/cicd
-  - ../../../../02-projects/petclinic/dev
-  - ../../../../02-projects/petclinic/test
+  - ../../../02-projects/petclinic/cicd
+  - ../../../02-projects/petclinic/dev
+  - ../../../02-projects/petclinic/test
 
 resources:
   - projects-project.yaml
