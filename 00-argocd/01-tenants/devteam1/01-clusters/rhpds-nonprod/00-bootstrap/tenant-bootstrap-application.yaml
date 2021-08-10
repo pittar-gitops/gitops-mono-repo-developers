@@ -1,0 +1,19 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  name: tenant-bootstrap
+spec:
+  destination:
+    namespace: devteam1-gitops
+    server: https://kubernetes.default.svc
+  project: tenant-bootstrap
+  source:
+    path: 00-argocd/01-tenants/devteam1/clusters/rhpds-nonprod
+    repoURL: https://github.com/pittar-gitops/gitops-mono-repo-developers.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

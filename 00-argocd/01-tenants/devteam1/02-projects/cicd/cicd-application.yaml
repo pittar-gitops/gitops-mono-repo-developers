@@ -1,0 +1,19 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  name: devteam1-cicd
+spec:
+  destination:
+    namespace: devteam1-cicd
+    server: https://kubernetes.default.svc
+  project: tenant-devteam1
+  source:
+    path: 01-tenants/devteam1/01-projects/cicd
+    repoURL: https://github.com/pittar-gitops/gitops-mono-repo-developers.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
