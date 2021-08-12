@@ -10,13 +10,15 @@ spec:
     - name: app-name
       type: string
       description: name of the deployment to be patched
+      default: "petclinic"
     - name: git-url
       type: string
       description: url of the git repo for the code of deployment
+      default: "https://github.com/pittar/spring-petclinic.git"
     - name: git-revision
       type: string
       description: revision to be used from repo of the code for deployment
-      default: "master"
+      default: "gitops-tekton"
   tasks:
     - name: fetch-repository
       taskRef:
@@ -83,8 +85,8 @@ spec:
         - name: APP_NAME
           value: "$(params.app-name)"
         - name: NAMESPACE
-          value: "petclinic-dev"
-    - name: tag-prod
+          value: "$(params.app-name)-dev"
+    - name: tag-test
       taskRef:
         name: openshift-client
         kind: ClusterTask
@@ -92,15 +94,15 @@ spec:
         - rollout-dev
       params:
         - name: ARGS
-          value: ["tag", "$(params.app-name):dev", "$(params.app-name):prod"]
-    - name: rollout-prod
+          value: ["tag", "$(params.app-name):dev", "$(params.app-name):test"]
+    - name: rollout-test
       taskRef:
         name: rollout-restart
         kind: Task
       runAfter:
-        - tag-prod
+        - tag-test
       params:
         - name: APP_NAME
           value: "$(params.app-name)"
         - name: NAMESPACE
-          value: "petclinic-prod"
+          value: "$(params.app-name)-test"
