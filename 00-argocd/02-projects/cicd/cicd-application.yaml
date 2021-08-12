@@ -3,15 +3,15 @@ apiVersion: argoproj.io/v1alpha1
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
-  name: petclinic-cicd
+  name: devteam1-cicd
 spec:
   destination:
-    namespace: petclinic-cicd
+    namespace: devteam1-cicd
     server: https://kubernetes.default.svc
   project: projects-project
   source:
-    path: 01-tenants/devteam1/01-projects/petclinic/cicd
-    repoURL: https://github.com/pittar-gitops/gitops-mono-repo-developers.git
+    path: 01-projects/cicd
+    repoURL: https://github.com/pittar-gitops/gitops-mono-repo-devteam1.git
     targetRevision: main
   syncPolicy:
     automated:

@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: tenant-bootstrap
   source:
-    path: 00-argocd/01-tenants/devteam1/01-clusters/rhpds-nonprod/01-projects
+    path: 00-argocd/01-clusters/rhpds-nonprod/01-projects
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo-developers.git
     targetRevision: main
   syncPolicy:

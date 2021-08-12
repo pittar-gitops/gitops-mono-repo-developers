@@ -3,5 +3,5 @@ kind: Kustomization
 
 # Deploy pre-configured SonarQube and Nexus from Red Hat Canada demo catalog.
 bases:
-  - github.com/redhat-canada-gitops/catalog/nexus2/base?ref=master
-  - github.com/redhat-canada-gitops/catalog/sonarqube8/overlays/plugins?ref=master
+  - github.com/redhat-cop/gitops-catalog/nexus2/base?ref=v0.3
+  - github.com/redhat-cop/gitops-catalog/sonarqube8/overlays/plugins?ref=v0.3
