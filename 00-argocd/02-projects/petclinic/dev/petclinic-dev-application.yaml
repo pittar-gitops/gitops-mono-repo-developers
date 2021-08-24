@@ -8,7 +8,7 @@ spec:
   destination:
     namespace: petclinic-dev
     server: https://kubernetes.default.svc
-  project: projects-project
+  project: devteam1-projects-project
   source:
     path: 01-projects/petclinic/dev
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo-devteam1.git
