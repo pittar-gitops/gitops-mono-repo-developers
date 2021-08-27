@@ -3,12 +3,12 @@ apiVersion: argoproj.io/v1alpha1
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-  name: devteam1-bootstrap
+  name: tenant-petclinic-bootstrap
 spec:
   destination:
     namespace: developer-gitops
     server: https://kubernetes.default.svc
-  project: devteam1-bootstrap
+  project: petclinic-bootstrap
   source:
     path: 00-argocd/01-clusters/rhpds-nonprod/01-projects
     repoURL: https://github.com/pittar-gitops/gitops-mono-repo-devteam1.git
