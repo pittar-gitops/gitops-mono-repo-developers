@@ -3,12 +3,16 @@ apiVersion: argoproj.io/v1alpha1
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+  labels:
+    tenant: petclinic
+    argocd.applicaion/type: namespace
+    namespace.env: cicd
   name: petclinic-cicd
 spec:
   destination:
     namespace: petclinic-cicd
     server: https://kubernetes.default.svc
-  project: petclinic-projects-project
+  project: petclinic-namespaces
   source:
     path: 01-namespaces/petclinic-cicd
     repoURL: https://github.com/pittar-gitops/gitops-tenant-petclinic.git
