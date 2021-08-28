@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: petclinic-projects-project
   source:
-    path: 01-namespaces/petclinic/dev
+    path: 01-namespaces/petclinic-dev
     repoURL: https://github.com/pittar-gitops/gitops-tenant-petclinic.git
     targetRevision: main
   syncPolicy:
