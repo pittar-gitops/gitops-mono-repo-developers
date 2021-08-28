@@ -3,14 +3,14 @@ apiVersion: argoproj.io/v1alpha1
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
-  name: petclinic-prod
+  name: petclinic-dev
 spec:
   destination:
-    namespace: petclinic-prod
+    namespace: petclinic-dev
     server: https://kubernetes.default.svc
   project: petclinic-projects-project
   source:
-    path: 01-projects/petclinic/prod
+    path: 01-namespaces/petclinic/dev
     repoURL: https://github.com/pittar-gitops/gitops-tenant-petclinic.git
     targetRevision: main
   syncPolicy:
