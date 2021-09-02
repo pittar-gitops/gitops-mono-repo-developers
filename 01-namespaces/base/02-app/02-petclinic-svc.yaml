@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: petclinic
     app.kubernetes.io/instance: petclinic
     app.kubernetes.io/part-of: petclinic
+    prometheus-metrics: "true"
   name: petclinic
 spec:
   ports:
