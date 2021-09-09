@@ -57,15 +57,20 @@ spec:
           workspace: maven-settings-cm
     - name: s2i-build
       taskRef:
-        name: s2i-binary-build
+        #name: s2i-binary-build
+        name: binary-s2i
         kind: Task
       runAfter:
         - mvn-build 
       params:
-        - name: BUILD_NAME
+        - name: file
+          value: "$(workspaces.source.path)/target/app.jar"
+        - name: buildconfig
           value: "$(params.app-name)-binary-build"
-        - name: BINARY_PATH
-          value: "/target/app.jar"
+#         - name: BUILD_NAME
+#           value: "$(params.app-name)-binary-build"
+#         - name: BINARY_PATH
+#           value: "/target/app.jar"
       workspaces:
         - name: build-workspace
           workspace: shared-workspace
