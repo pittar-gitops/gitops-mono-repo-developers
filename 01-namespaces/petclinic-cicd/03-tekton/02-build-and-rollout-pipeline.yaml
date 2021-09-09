@@ -70,7 +70,7 @@ spec:
         - name: build-workspace
           workspace: shared-workspace
     - name: acs-scan-image
-      taskref:
+      taskRef:
         name: rox-image-scan
         kind: ClusterTask
       runAfter:
@@ -85,7 +85,7 @@ spec:
         - name: output_format
           value: pretty
     - name: acs-check-image
-      taskref:
+      taskRef:
         name: rox-image-check
         kind: ClusterTask
       runAfter:
