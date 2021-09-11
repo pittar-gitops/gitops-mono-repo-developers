@@ -2,12 +2,6 @@
   path: /subjects/-
   value:
     kind: ServiceAccount
-    name: stackrox-image-puller
-    namespace: stackrox
-- op: add
-  path: /subjects/-
-  value:
-    kind: ServiceAccount
     name: default
     namespace: petclinic-dev
 - op: add
