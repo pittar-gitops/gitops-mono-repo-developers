@@ -59,7 +59,7 @@ spec:
       taskRef:
         #name: s2i-binary-build
         name: binary-s2i
-        kind: Task
+        kind: ClusterTask
       runAfter:
         - mvn-build 
       params:
