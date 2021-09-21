@@ -6,6 +6,21 @@ bases:
   - 02-builds
   - 03-tekton
   - 04-config
+  - ../../base/stackrox-cicd-token-generator
+
+patches:
+- target:
+    kind: PipelineRun
+    name: stackrox-token-secret-patchme
+  patch: |-
+    - op: add
+      path: /spec/params/-
+      value:
+        name: "NAMESPACE"
+        value: "petclinic-cicd"
+    - op: replace
+      path: /metadata/name
+      value: 'stackrox-token-secret-petclinic-cicd'
 
 patchesJson6902:
   - target:
