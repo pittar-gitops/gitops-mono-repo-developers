@@ -18,6 +18,7 @@ configMapGenerator:
   - name: maven-settings-cm
     files:
       - settings.xml
+
 commonAnnotations:
   argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   argocd.argoproj.io/sync-wave: "1"
