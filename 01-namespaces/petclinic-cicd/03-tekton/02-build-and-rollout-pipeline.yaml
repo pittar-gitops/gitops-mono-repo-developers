@@ -63,14 +63,14 @@ spec:
       runAfter:
         - mvn-build 
       params:
-        - name: file
-          value: "$(workspaces.source.path)/target/app.jar"
-        - name: buildconfig
-          value: "$(params.app-name)-binary-build"
-#         - name: BUILD_NAME
+#         - name: file
+#           value: "$(workspaces.source.path)/target/app.jar"
+#         - name: buildconfig
 #           value: "$(params.app-name)-binary-build"
-#         - name: BINARY_PATH
-#           value: "/target/app.jar"
+        - name: BUILD_NAME
+          value: "$(params.app-name)-binary-build"
+        - name: BINARY_PATH
+          value: "$(workspaces.source.path)/target/app.jar"
       workspaces:
         - name: source
           workspace: shared-workspace
