@@ -15,3 +15,4 @@ resources:
   - 02-build-and-rollout-pipeline.yaml
   - 03-rox-image-check-task.yaml
   - 04-rox-image-scan-task.yaml
+  - 05-binary-s2i-task.yaml
