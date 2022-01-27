@@ -57,9 +57,9 @@ spec:
           workspace: maven-settings-cm
     - name: s2i-build
       taskRef:
-        #name: s2i-binary-build
-        name: binary-s2i
-        kind: ClusterTask
+        name: s2i-binary-build
+        #name: binary-s2i
+        kind: Task
       runAfter:
         - mvn-build 
       params:
