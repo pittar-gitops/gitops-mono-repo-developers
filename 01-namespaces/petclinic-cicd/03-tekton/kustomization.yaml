@@ -11,7 +11,7 @@ bases:
   - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/s2i-binary-build/base?ref=v0.3
 
 resources:
-  - https://raw.githubusercontent.com/gnunn1/contributions/main/ci/Tekton/Tasks/rox-image-check-task.yml
-  - https://raw.githubusercontent.com/stackrox/contributions/main/ci/Tekton/Tasks/rox-image-scan-task.yml
   - 01-workspace-pvc.yaml
   - 02-build-and-rollout-pipeline.yaml
+  - 03-rox-image-check-task.yaml
+  - 04-rox-image-scan-task.yaml
