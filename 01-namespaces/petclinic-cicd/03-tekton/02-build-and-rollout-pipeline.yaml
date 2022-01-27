@@ -77,7 +77,7 @@ spec:
     - name: acs-scan-image
       taskRef:
         name: rox-image-scan
-        kind: ClusterTask
+        kind: Task
       runAfter:
         - s2i-build
       params:
@@ -92,7 +92,7 @@ spec:
     - name: acs-check-image
       taskRef:
         name: rox-image-check
-        kind: ClusterTask
+        kind: Task
       runAfter:
         - acs-scan-image
       params:
