@@ -9,7 +9,7 @@ spec:
     - name: git-url
       value: 'https://github.com/pittar/spring-petclinic.git'
     - name: git-revision
-      value: gitops-tekton
+      value: log4j
     - name: acs-secret
       value: roxsecrets
   pipelineRef:
