@@ -88,7 +88,7 @@ spec:
         - name: image
           value: image-registry.openshift-image-registry.svc:5000/petclinic-cicd/petclinic@$(tasks.s2i-build.results.digest)
         - name: output_format
-          value: pretty
+          value: table
     - name: acs-check-image
       taskRef:
         name: rox-image-check
