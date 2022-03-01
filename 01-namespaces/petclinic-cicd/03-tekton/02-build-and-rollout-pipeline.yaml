@@ -74,45 +74,45 @@ spec:
       workspaces:
         - name: source
           workspace: shared-workspace
-    - name: acs-scan-image
-      taskRef:
-        name: rox-image-scan
-        kind: Task
-      runAfter:
-        - s2i-build
-      params:
-        - name: rox_central_endpoint
-          value: $(params.acs-secret)
-        - name: rox_api_token
-          value: $(params.acs-secret)
-        - name: image
-          value: image-registry.openshift-image-registry.svc:5000/petclinic-cicd/petclinic@$(tasks.s2i-build.results.digest)
-        - name: output_format
-          value: table
-    - name: acs-check-image
-      taskRef:
-        name: rox-image-check
-        kind: Task
-      runAfter:
-        - acs-scan-image
-      params:
-        - name: rox_central_endpoint
-          value: $(params.acs-secret)
-        - name: rox_api_token
-          value: $(params.acs-secret)
-        - name: image
-          value: image-registry.openshift-image-registry.svc:5000/petclinic-cicd/petclinic@$(tasks.s2i-build.results.digest)
-      # Uncomment when "when" is scoped to task in Pipelines 1.6
-      # when:
-      #   - input: "$(params.acs-secret)"
-      #     operator: notin
-      #     values: ["ignore"]
+#     - name: acs-scan-image
+#       taskRef:
+#         name: rox-image-scan
+#         kind: Task
+#       runAfter:
+#         - s2i-build
+#       params:
+#         - name: rox_central_endpoint
+#           value: $(params.acs-secret)
+#         - name: rox_api_token
+#           value: $(params.acs-secret)
+#         - name: image
+#           value: image-registry.openshift-image-registry.svc:5000/petclinic-cicd/petclinic@$(tasks.s2i-build.results.digest)
+#         - name: output_format
+#           value: table
+#     - name: acs-check-image
+#       taskRef:
+#         name: rox-image-check
+#         kind: Task
+#       runAfter:
+#         - acs-scan-image
+#       params:
+#         - name: rox_central_endpoint
+#           value: $(params.acs-secret)
+#         - name: rox_api_token
+#           value: $(params.acs-secret)
+#         - name: image
+#           value: image-registry.openshift-image-registry.svc:5000/petclinic-cicd/petclinic@$(tasks.s2i-build.results.digest)
+#       # Uncomment when "when" is scoped to task in Pipelines 1.6
+#       # when:
+#       #   - input: "$(params.acs-secret)"
+#       #     operator: notin
+#       #     values: ["ignore"]
     - name: tag-dev
       taskRef:
         name: openshift-client
         kind: ClusterTask
       runAfter:
-        - acs-check-image
+        - s2i-build
       params:
         - name: SCRIPT
           value: "oc tag $(params.app-name):latest $(params.app-name):dev"
