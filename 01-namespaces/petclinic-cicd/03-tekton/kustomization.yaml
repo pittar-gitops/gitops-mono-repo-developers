@@ -7,7 +7,7 @@ commonAnnotations:
 
 bases:
   - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/rollout-restart/base?ref=v0.3
-  - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/maven/base?ref=v0.3
+  - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/maven/overlays/m2-cache?ref=v0.3
   - github.com/redhat-cop/gitops-catalog/openshift-pipelines-tasks/s2i-binary-build/base?ref=v0.3
 
 resources:
