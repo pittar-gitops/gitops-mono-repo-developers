@@ -12,6 +12,7 @@ bases:
 
 resources:
   - 01-workspace-pvc.yaml
+  - 01-m2-cache-pvc.yaml
   - 02-build-and-rollout-pipeline.yaml
   - 03-rox-image-check-task.yaml
   - 04-rox-image-scan-task.yaml
