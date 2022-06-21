@@ -4,4 +4,4 @@ kind: Kustomization
 bases:
   - 01-database
   - 02-app
-  - 03-monitoring
+  #- 03-monitoring
